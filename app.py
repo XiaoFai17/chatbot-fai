@@ -1,13 +1,3 @@
-"""
-Fai - Gaming Companion Chatbot
-Streamlit app terhubung ke Groq API dengan fitur:
-- Trial chat gratis (1x pakai API key milik developer, selanjutnya user wajib input API key sendiri)
-- Streaming response
-- Conversation history (simpan ke JSON & muat ulang)
-- Kontrol parameter temperature
-- Error handling supaya tidak crash
-"""
-
 import json
 from datetime import datetime
 
