@@ -6,10 +6,6 @@ Streamlit app terhubung ke Groq API dengan fitur:
 - Conversation history (simpan ke JSON & muat ulang)
 - Kontrol parameter temperature
 - Error handling supaya tidak crash
-
-Tidak ada file konfigurasi tambahan (config.toml) yang dipakai, jadi tampilan
-mengikuti tema default Streamlit (bisa diganti Light/Dark oleh viewer lewat
-menu Settings di app setelah dideploy).
 """
 
 import json
@@ -48,9 +44,10 @@ Yang tidak boleh dilakukan:
 """
 
 GREETING = (
-    "Halo, gue Fai, temen ngobrol kamu buat nyari game yang pas dimainkan. "
-    "Cerita dong, sekarang lagi mood apa? Capek dan pengen santai, lagi semangat "
-    "cari tantangan, punya waktu berapa lama, atau ada genre favorit tertentu?"
+    "Halo, aku Fai, singkatan dari Fun AI. Tugasku simpel: bantu kamu having fun "
+    "lewat game yang emang cocok buat dimainkan sekarang. "
+    "Lagi pengen main apa nih? Ceritain aja kondisi kamu, capek dan pengen yang santai, "
+    "atau lagi pengen ketagihan sama tantangan, nanti aku carikan yang pas."
 )
 
 MODEL_NAME = "openai/gpt-oss-120b"
@@ -190,7 +187,7 @@ with st.sidebar:
 # =========================================================
 
 st.title("Fai")
-st.caption("Ngobrol bareng Fai buat nemuin game yang pas buat kamu mainkan")
+st.caption("Fun AI yang bantu kamu having fun — cerita mood kamu, Fai carikan game yang paling pas")
 
 # =========================================================
 # RENDER RIWAYAT CHAT
