@@ -1,4 +1,4 @@
-# Fai — Fun AI Gaming Companion
+# Fai (Fun AI) Gaming Companion
 
 ## Identitas
 
@@ -13,9 +13,9 @@ Untuk tugas ini, saya mencoba dua pendekatan. Pertama, saya membangun chatbot se
 
 ## Tema Chatbot: Fai (Fun AI)
 
-**Fai** adalah singkatan dari **Fun AI** — sebuah gaming companion yang membantu pengguna menemukan game yang cocok untuk dimainkan berdasarkan kondisi dan keinginan mereka saat itu.
+**Fai** adalah singkatan dari **Fun AI** sebuah gaming companion yang membantu pengguna menemukan game yang cocok untuk dimainkan berdasarkan kondisi dan keinginan mereka saat itu.
 
-Konsepnya sederhana: alih-alih pengguna bingung sendiri harus main game apa, Fai mengajak ngobrol santai layaknya teman, menggali informasi seperti mood saat ini, waktu bermain yang tersedia, genre favorit, platform, sampai preferensi main sendiri atau bareng teman (multiplayer). Dari situ, Fai memberikan rekomendasi game beserta alasan singkat kenapa game tersebut cocok, dan tetap mengingat konteks yang sudah disebutkan sepanjang percakapan berlangsung.
+Konsepnya sederhana: alih-alih pengguna bingung sendiri harus main game apa, Fai mengajak ngobrol santai layaknya teman, menggali informasi seperti mood saat ini, waktu bermain yang tersedia, genre favorit, platform, sampai preferensi main sendiri atau bareng teman. Dari situ, Fai memberikan rekomendasi game beserta alasan singkat kenapa game tersebut cocok, dan tetap mengingat konteks yang sudah disebutkan sepanjang percakapan berlangsung.
 
 ## Cara Menggunakan
 
@@ -27,8 +27,8 @@ Chatbot ini sudah live dan bisa langsung dicoba tanpa instalasi apa pun:
 Fitur-fitur yang tersedia:
 
 - **Trial chat gratis** pesan pertama bisa langsung dicoba secara gratis. Setelah jatah trial habis, kamu akan diminta memasukkan Groq API key milikmu sendiri lewat sidebar untuk melanjutkan percakapan.
-- **Streaming response** jawaban Fai muncul bertahap (mengetik), bukan langsung utuh sekaligus.
-- **Mode Dark/Light** memanfaatkan fitur bawaan Streamlit, bisa diganti lewat menu (titik tiga di kanan atas) → Settings.
+- **Streaming response** jawaban Fai muncul bertahap, bukan langsung utuh sekaligus.
+- **Mode Dark/Light** memanfaatkan fitur bawaan Streamlit, bisa diganti lewat menu Settings.
 - **Pengaturan temperature** slider di sidebar untuk mengatur seberapa kreatif/variatif jawaban Fai.
 - **Chat Baru** tombol untuk mereset percakapan dan mulai dari awal.
 - **Simpan riwayat** tombol untuk mengunduh riwayat percakapan dalam format JSON.
@@ -63,21 +63,6 @@ Jika ingin menjalankan proyek ini di komputer sendiri (clone dari repo):
 
 5. Buka browser ke alamat yang muncul di terminal (biasanya `http://localhost:8501`).
 
-## Dokumentasi Percakapan
-
-Berikut beberapa cuplikan percakapan dengan Fai:
-
-![Percakapan dengan Fai 1](img/fai1.png)
-
-![Percakapan dengan Fai 2](img/fai2.png)
-
-![Percakapan dengan Fai 3](img/fai3.png)
-
-<!-- ![Percakapan dengan Fai 4](img/fai4.jpeg) -->
-<div align="center">
-  <img src="img/fai4.jpeg" alt="Percakapan dengan Fai 4" width="500">
-</div>
-
 ## Struktur Kode (`app.py`)
 
 Kode utama `app.py` disusun dengan urutan sebagai berikut:
@@ -93,3 +78,17 @@ Kode utama `app.py` disusun dengan urutan sebagai berikut:
 - **Render riwayat chat** menampilkan seluruh isi `messages` sebagai bubble chat, dan menampilkan `GREETING` sebagai sapaan statis saat percakapan baru dimulai (tidak memanggil API sehingga tidak memakan jatah trial).
 
 - **Input & logika chat** menangani pesan baru dari pengguna: memeriksa ketersediaan API key lewat `resolve_api_key()`, mengirim seluruh riwayat percakapan ke Groq API dengan `stream=True` untuk menghasilkan jawaban secara bertahap, menampilkannya secara live ke layar, menangani berbagai jenis error (API key tidak valid, rate limit, timeout) tanpa membuat aplikasi crash, serta memperbarui status `trial_used` setelah trial terpakai.
+
+## Dokumentasi Percakapan
+
+Berikut beberapa dokumentasi percakapan dengan Fai:
+
+![Percakapan dengan Fai 1](img/fai1.png)
+
+![Percakapan dengan Fai 2](img/fai2.png)
+
+![Percakapan dengan Fai 3](img/fai3.png)
+
+<div align="center">
+  <img src="img/fai4.jpeg" alt="Percakapan dengan Fai 4" width="500">
+</div>
