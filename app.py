@@ -6,6 +6,10 @@ Streamlit app terhubung ke Groq API dengan fitur:
 - Conversation history (simpan ke JSON & muat ulang)
 - Kontrol parameter temperature
 - Error handling supaya tidak crash
+
+Tidak ada file konfigurasi tambahan (config.toml) yang dipakai, jadi tampilan
+mengikuti tema default Streamlit (bisa diganti Light/Dark oleh viewer lewat
+menu Settings di app setelah dideploy).
 """
 
 import json
@@ -50,57 +54,6 @@ GREETING = (
 )
 
 MODEL_NAME = "openai/gpt-oss-120b"
-
-# =========================================================
-# STYLING
-# =========================================================
-
-st.markdown(
-    """
-    <style>
-    .fai-header {
-        text-align: center;
-        padding: 0.75rem 0 1.25rem 0;
-    }
-    .fai-header h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0.1rem;
-        background: linear-gradient(90deg, #8b5cf6, #06b6d4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .fai-header p {
-        color: #9ca3af;
-        font-size: 0.9rem;
-        margin: 0;
-    }
-    /* Bubble chat: background gelap konsisten + teks dipaksa terang supaya
-       selalu kebaca, apapun tema browser/OS pengguna */
-    [data-testid="stChatMessage"] {
-        border-radius: 14px;
-        padding: 0.7rem 1rem;
-        background-color: #1a1b23;
-        border: 1px solid #2a2b36;
-        margin-bottom: 0.5rem;
-    }
-    [data-testid="stChatMessage"] p,
-    [data-testid="stChatMessage"] li,
-    [data-testid="stChatMessage"] span,
-    [data-testid="stChatMessage"] strong {
-        color: #e8e9ed !important;
-    }
-    [data-testid="stChatMessage"] code {
-        color: #f0abfc !important;
-        background-color: #26272f !important;
-    }
-    .stChatInput textarea {
-        border-radius: 12px !important;
-    }
-    div[data-testid="stSidebarUserContent"] hr { margin: 0.6rem 0; }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 # =========================================================
 # SESSION STATE
@@ -236,15 +189,8 @@ with st.sidebar:
 # HEADER
 # =========================================================
 
-st.markdown(
-    """
-    <div class="fai-header">
-        <h1>Fai</h1>
-        <p>Ngobrol bareng Fai buat nemuin game yang pas buat kamu mainkan</p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+st.title("Fai")
+st.caption("Ngobrol bareng Fai buat nemuin game yang pas buat kamu mainkan")
 
 # =========================================================
 # RENDER RIWAYAT CHAT
